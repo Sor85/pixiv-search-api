@@ -47,10 +47,10 @@
 -   记录网络日志。大多数情况下打开就是默认启动的，但是还是要检查一下。
 -   在筛选器中输入：`callback?` 。
 -   登录你的 Pixiv 账号
--   登录后会跳转到一个空白页面，但是在开发控制台里会出现你筛选的带有callback?的访问请求，点击这条请求，将“`https://app-api.pixiv.net/web/v1/users/auth/pixiv/callback?state=...&code=...`”中的 `code` 复制到命令窗口中。
+-   登录后会跳转到一个空白页面，但是在开发控制台里会出现你筛选的带有 `callback?` 的访问请求，点击这条请求，将“`https://app-api.pixiv.net/web/v1/users/auth/pixiv/callback?state=...&code=...`”中的 `code` 复制到命令窗口中。
 -   这样就会获取到 `Refresh Token`。
 
-**重要提示**: 如果最后按照这个步骤没有获取到 `Refresh Token`，那么重新操作一遍，并尽可能的提高速度，`code` 会很快过期。
+**重要提示: 如果最后按照这个步骤没有获取到 `Refresh Token`，那么重新操作一遍，并尽可能的提高速度，`code` 会很快过期。**
 
 教程来源：https://mwm.pw/87/
 
