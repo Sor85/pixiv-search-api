@@ -58,8 +58,8 @@
 
 1.  **克隆仓库**:
     ```bash
-    # git clone <repository_url>
-    # cd <repository_name>
+    # git clone https://github.com/Sor85/pixiv_search_api.git
+    # cd pixiv_search_api
     ```
 
 2.  **创建并激活虚拟环境**:
