@@ -4,7 +4,7 @@
 
 ## 特性
 
--   通过关键词（标签）搜索 Pixiv 图片。
+-   通过关键词搜索 Pixiv 图片。
 -   支持多个标签同时搜索（使用逗号分隔）。
 -   支持 R18 内容筛选。
 -   随机返回一张符合条件的图片。
@@ -26,35 +26,29 @@
 
 示例：http://localhost:2494/pixiv/direct?r18=0&keyword=
 
-**成功响应 (200 OK):**
-
-API 将直接返回图片数据流。如果通过浏览器访问该端点，浏览器将直接显示一张随机选择的符合条件的图片。
-响应的 `Content-Type` 将是图片的实际类型 (例如 `image/jpeg`, `image/png`)。
-
 **错误响应:**
 
 -   `400 Bad Request`: 如果 `keyword` 参数为空。
 -   `404 Not Found`: 如果没有找到符合搜索条件和R18设置的图片，或者选中的图片没有可用的图片URL。
 -   `500 Internal ServerError`: 如果在与 Pixiv API 通信或处理过程中发生内部错误。
--   `502 Bad Gateway`: 如果API服务器在尝试从Pixiv获取图片时遇到问题（例如，Pixiv图片服务器返回错误）。
+-   `502 Bad Gateway`: 如果API服务器在尝试从Pixiv获取图片时遇到问题。
 
 ## 前提条件
 
--   Docker 已安装。
 -   一个有效的 Pixiv `refresh_token`。
 
 ## 如何获取 `PIXIV_REFRESH_TOKEN`
 
-`pixivpy` 库需要一个 `refresh_token` 来进行认证。获取此 token 的方法通常包括：
+`pixivpy` 库需要一个 `refresh_token` 来进行认证。获取此 token 的方法如下：
 
 **使用`pixiv_auth.py`获取`refresh_token`**:
-    *   在所建Python脚本根目录空白处按住Shift并右键鼠标，从“在此处打开终端/在此处打开Powershell窗口/在此处打开Linux shell”中任选其一，在弹出的命令窗口中输入：python pixiv_auth.py login。这将会打开一个带有Pixiv登录界面的浏览器。
-    *   通过F12打开浏览器的开发控制台并跳转至“网络（Network）”选项。
-    *   记录网络日志。大多数情况下打开就是默认启动的，但是还是要检查一下。
-    *   在筛选器中输入：callback? 。
-    *   登录你的Pixiv账号
-    *   登录后会跳转到一个空白页面，但是在开发控制台里会出现你筛选的带有callback?的访问请求，点击这条请求，将“https://app-api.pixiv.net/web/v1/users/auth/pixiv/callback?state=...&code=...”中的code复制到命令窗口中。
-    *   这样就会获取到Refresh Token。
+-   在所建Python脚本根目录空白处按住Shift并右键鼠标，从“在此处打开终端/在此处打开Powershell窗口/在此处打开Linux shell”中任选其一，在弹出的命令窗口中输入：python pixiv_auth.py login。这将会打开一个带有Pixiv登录界面的浏览器。
+-   通过F12打开浏览器的开发控制台并跳转至“网络（Network）”选项。
+-   记录网络日志。大多数情况下打开就是默认启动的，但是还是要检查一下。
+-   在筛选器中输入：callback? 。
+-   登录你的Pixiv账号
+-   登录后会跳转到一个空白页面，但是在开发控制台里会出现你筛选的带有callback?的访问请求，点击这条请求，将“https://app-api.pixiv.net/web/v1/users/auth/pixiv/callback?state=...&code=...”中的code复制到命令窗口中。
+-   这样就会获取到Refresh Token。
 
 **重要提示**: 如果最后按照这个步骤没有获取到Refresh Token，那么重新操作一遍，并尽可能的提高速度，code会很快过期。
 
