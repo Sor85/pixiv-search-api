@@ -42,7 +42,7 @@
 `pixivpy` 库需要一个 `refresh_token` 来进行认证。获取此 token 的方法如下：
 
 **使用`pixiv_auth.py`获取`refresh_token`**:
--   在所建 Python 脚本根目录空白处按住 Shift 并右键鼠标，从“在此处打开终端/在此处打开 Powershell 窗口/在此处打开 Linux shell”中任选其一，在弹出的命令窗口中输入：`python pixiv_auth.py login`。这将会打开一个带有 Pixiv 登录界面的浏览器。
+-   在项目根目录空白处按住 Shift 并右键鼠标，从“在此处打开终端/在此处打开 Powershell 窗口/在此处打开 Linux shell”中任选其一，在弹出的命令窗口中输入：`python pixiv_auth.py login`。这将会打开一个带有 Pixiv 登录界面的浏览器。
 -   通过F12打开浏览器的开发控制台并跳转至“网络（Network）”选项。
 -   记录网络日志。大多数情况下打开就是默认启动的，但是还是要检查一下。
 -   在筛选器中输入：`callback?` 。
