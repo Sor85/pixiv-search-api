@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   pixiv_api_service:
-    image: lun1ry/pixiv_search_api
+    image: lun1ry/pixiv-search-api
     container_name: pixiv-search-api
     ports:
       - "2494:2494"
