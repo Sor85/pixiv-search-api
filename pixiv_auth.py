@@ -43,8 +43,8 @@ CLIENT_SECRET = "lsACyCD94FhDUtGTXi3QzcFE2uU1hqtDaKeqrdwj"
 
 
 def s256(data):
-    """S256 transformation method.""" # 这一行现在已正确缩进
-    return urlsafe_b64encode(sha256(data).digest()).rstrip(b"=").decode("ascii") # 这一行现在已正确缩进
+    """S256 transformation method."""
+    return urlsafe_b64encode(sha256(data).digest()).rstrip(b"=").decode("ascii") # 
 
 
 

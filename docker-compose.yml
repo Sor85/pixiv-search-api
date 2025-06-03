@@ -8,7 +8,4 @@ services:
       - "2494:2494"
     environment:
       - PIXIV_REFRESH_TOKEN=${PIXIV_REFRESH_TOKEN}
-    # Если вы хотите использовать .env файл для PIXIV_REFRESH_TOKEN:
-    # env_file:
-    #   - .env
     restart: unless-stopped 
